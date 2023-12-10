@@ -18,6 +18,10 @@ function MenuItemList() {
     }
   }, [isLoading]);
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="container row">
       {data.result.length > 0 &&
