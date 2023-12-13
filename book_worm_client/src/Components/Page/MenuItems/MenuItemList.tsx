@@ -4,7 +4,7 @@ import MenuItemCard from "./MenuItemCard";
 import { useGetMenuItemsQuery } from "../../../Apis/menuItemApi";
 import { useDispatch } from "react-redux";
 import { setMenuItem } from "../../../Storage/Redux/menuItemSlice";
-import { MainLoader } from "./Common";
+import { MainLoader } from "../Common";
 
 function MenuItemList() {
   //const [menuItems, setMenuItems] = useState<menuItemModel[]>([]);
