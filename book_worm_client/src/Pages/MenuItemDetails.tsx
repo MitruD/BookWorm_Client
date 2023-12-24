@@ -33,7 +33,7 @@ function MenuItemDetails() {
     const response: apiResponse = await updateShoppingCart({
       menuItemId: menuItemId,
       updateQuantityBy: quantity,
-      userId: "a54b4f2d-8282-4da7-a9a7-e4149e0611a0",
+      userId: "9501fc82-a391-4315-8a5d-7820bb175dda",
     });
 
     if (response.data && response.data.isSuccess) {

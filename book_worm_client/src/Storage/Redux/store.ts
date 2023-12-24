@@ -12,17 +12,12 @@ const store = configureStore({
     [shoppingCartApi.reducerPath]: shoppingCartApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
   },
-  // middleware: (getDefaultMiddleware) =>
-  //   getDefaultMiddleware()
-  //     .concat(menuItemApi.middleware)
-  //     .concat(authApi.middleware)
-  //     .concat(shoppingCartApi.middleware),
   middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware().concat(
-    menuItemApi.middleware,
-    authApi.middleware,
-    shoppingCartApi.middleware
-  ),
+    getDefaultMiddleware()
+      .concat(menuItemApi.middleware)
+      .concat(authApi.middleware)
+      .concat(shoppingCartApi.middleware),
+
 });
 
 
