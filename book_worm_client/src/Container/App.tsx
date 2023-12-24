@@ -21,7 +21,7 @@ function App() {
   const dispatch = useDispatch();
 
   const { data, isLoading } = useGetShoppingCartQuery(
-    "a54b4f2d-8282-4da7-e4149e0611a0"
+    "a54b4f2d-8282-4da7-149e0611a0"
   );
 
   useEffect(() => {
