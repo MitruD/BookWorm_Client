@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { inputHelper } from "../Helper";
 import { useLoginUserMutation } from "../Apis/authApi";
+import { inputHelper } from "../Helper";
 import { apiResponse, userModel } from "../Interfaces";
 import jwt_decode from "jwt-decode";
 import { useDispatch } from "react-redux";
@@ -45,7 +45,6 @@ function Login() {
 
     setLoading(false);
   };
-
   return (
     <div className="container text-center">
       {loading && <MainLoader />}

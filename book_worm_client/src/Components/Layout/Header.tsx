@@ -1,12 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { cartItemModel, userModel } from "../../Interfaces";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../Storage/Redux/store";
+import {
+  emptyUserState,
+  setLoggedInUser,
+} from "../../Storage/Redux/userAuthSlice";
 let logo = require("../../Assets/Images/mango.png");
+
 //rfce - code snippet
 
 function Header() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const shoppingCartFromStore: cartItemModel[] = useSelector(
     (state: RootState) => state.shoppingCartStore.cartItems ?? []
   );
@@ -14,6 +22,12 @@ function Header() {
   const userData: userModel = useSelector(
     (state: RootState) => state.userAuthStore
   );
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    dispatch(setLoggedInUser({ ...emptyUserState }));
+    navigate("/");
+  };
 
   return (
     <div>
@@ -108,6 +122,7 @@ function Header() {
                           height: "40px",
                           width: "100px",
                         }}
+                        onClick={handleLogout}
                       >
                         Logout
                       </button>
