@@ -47,7 +47,6 @@ export default function CartPickUpDetails() {
     setLoading(true);
 
     const { data }: apiResponse = await initiatePayment(userData.id);
-
     navigate("/payment", {
       state: { apiResult: data?.result, userInput },
     });
