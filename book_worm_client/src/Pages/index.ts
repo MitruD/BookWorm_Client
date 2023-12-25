@@ -7,5 +7,17 @@ import Login from "./Login";
 import AuthenticationTest from "./AuthenticationTest";
 import AuthenticationTestAdmin from "./AuthenticationTestAdmin";
 import AccessDenied from "./AccessDenied";
+import Payment from "./Payment";
 
-export { Home, NotFound, MenuItemDetails, ShoppingCart, Register, Login,AccessDenied,AuthenticationTestAdmin,AuthenticationTest};
+export {
+  Home,
+  NotFound,
+  MenuItemDetails,
+  ShoppingCart,
+  Register,
+  Login,
+  AccessDenied,
+  AuthenticationTestAdmin,
+  AuthenticationTest,
+  Payment,
+};
