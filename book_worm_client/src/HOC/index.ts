@@ -1,3 +1,6 @@
-import withAuth from "./withAuth";
+//HOC - Higher-Order Component 
 
-export{withAuth}
+import withAuth from "./withAuth";
+import withAdminAuth from "./withAdminAuth";
+
+export{withAuth,withAdminAuth}

@@ -24,12 +24,11 @@ function App() {
   const dispatch = useDispatch();
 
   const { data, isLoading } = useGetShoppingCartQuery(
-    "9501fc82-a391-4315-8a5d-7820bb175dda"
+    "b7ae37bf-09b1-4b47-9ce1-c963031d220"
   );
 
   useEffect(() => {
     const localToken = localStorage.getItem("token");
-
     if (localToken) {
       const { fullName, id, email, role }: userModel = jwt_decode(localToken);
       dispatch(setLoggedInUser({ fullName, id, email, role }));

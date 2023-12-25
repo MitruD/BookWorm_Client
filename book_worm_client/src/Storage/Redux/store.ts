@@ -13,13 +13,11 @@ const store = configureStore({
     [authApi.reducerPath]: authApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware()
-      .concat(menuItemApi.middleware)
-      .concat(authApi.middleware)
-      .concat(shoppingCartApi.middleware),
-
+  getDefaultMiddleware()
+    .concat(menuItemApi.middleware)
+    .concat(authApi.middleware)
+    .concat(shoppingCartApi.middleware),
 });
-
 
 export type RootState = ReturnType<typeof store.getState>;
 
