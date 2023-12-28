@@ -19,7 +19,7 @@ function MenuItemCard(props: Props) {
   const userData: userModel = useSelector(
     (state: RootState) => state.userAuthStore
   );
-
+  //sadfas
   const handleAddToCart = async (menuItemId: number) => {
     if (!userData.id) {
       navigate("/login");
