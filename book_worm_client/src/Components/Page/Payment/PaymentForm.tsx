@@ -38,16 +38,6 @@ const PaymentForm = ({ data, userInput }: orderSummaryProps) => {
       toastNotify("An unexpected error occured.", "error");
       setIsProcessing(false);
     } else {
-      console.log(result);
-      // "pickupName": "string",
-      // "pickupPhoneNumber": "string",
-      // "pickupEmail": "string",
-      // "applicationUserId": "string",
-      // "orderTotal": 0,
-      // "stripePaymentIntentID": "string",
-      // "status": "string",
-      // "totalItems": 0,
-
       let grandTotal = 0;
       let totalItems = 0;
 
