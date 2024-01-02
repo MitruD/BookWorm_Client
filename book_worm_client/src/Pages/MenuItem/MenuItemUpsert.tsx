@@ -7,12 +7,20 @@ import {
   useUpdateMenuItemMutation,
 } from "../../Apis/menuItemApi";
 import { MainLoader } from "../../Components/Page/Common";
+import { SD_Categories } from "../../Utility/SD";
+
+const Categories = [
+  SD_Categories.APPETIZER,
+  SD_Categories.BEVERAGES,
+  SD_Categories.DESSERT,
+  SD_Categories.ENTREE,
+];
 
 const menuItemData = {
   name: "",
   description: "",
   specialTag: "",
-  category: "",
+  category: Categories[0],
   price: "",
 };
 
@@ -94,7 +102,7 @@ function MenuItemUpsert() {
 
     formData.append("Name", menuItemInputs.name);
     formData.append("Description", menuItemInputs.description);
-    formData.append("SpecialTag", menuItemInputs.specialTag);
+    formData.append("SpecialTag", menuItemInputs.specialTag ?? "");
     formData.append("Category", menuItemInputs.category);
     formData.append("Price", menuItemInputs.price);
 
@@ -152,14 +160,17 @@ function MenuItemUpsert() {
               className="form-control mt-3"
               placeholder="Enter Special Tag"
             />
-            <input
-              type="text"
-              className="form-control mt-3"
+            <select
+              className="form-control mt-3 form-select"
               placeholder="Enter Category"
               name="category"
               value={menuItemInputs.category}
               onChange={handleMenuItemInput}
-            />
+            >
+              {Categories.map((category) => (
+                <option value={category}>{category}</option>
+              ))}
+            </select>
             <input
               type="number"
               className="form-control mt-3"
