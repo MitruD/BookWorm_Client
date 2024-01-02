@@ -2,9 +2,11 @@ import React from "react";
 import { useGetMenuItemsQuery } from "../../Apis/menuItemApi";
 import { MainLoader } from "../../Components/Page/Common";
 import { menuItemModel } from "../../Interfaces";
+import { useNavigate } from "react-router-dom";
 
 function MenuItemList() {
   const { data, isLoading } = useGetMenuItemsQuery(null);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -43,7 +45,12 @@ function MenuItemList() {
                   <div className="col-2">{menuItem.specialTag}</div>
                   <div className="col-1">
                     <button className="btn btn-success">
-                      <i className="bi bi-pencil-fill"></i>
+                      <i
+                        className="bi bi-pencil-fill"
+                        onClick={() =>
+                          navigate("/menuitem/menuitemupsert/" + menuItem.id)
+                        }
+                      ></i>
                     </button>
                     <button className="btn btn-danger mx-2">
                       <i className="bi bi-trash-fill"></i>
