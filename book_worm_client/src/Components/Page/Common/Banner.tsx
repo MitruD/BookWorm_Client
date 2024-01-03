@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import "./banner.css";
+import { setSearchItem } from "../../../Storage/Redux/menuItemSlice";
 function Banner() {
+  const [value, setValue] = useState("");
+  const dispatch = useDispatch();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchItem(e.target.value));
+    setValue(e.target.value);
+  };
+
   return (
     <div className="custom-banner">
       <div
