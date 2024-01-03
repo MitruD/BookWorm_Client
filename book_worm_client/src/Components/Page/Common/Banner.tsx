@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import "./banner.css";
 import { setSearchItem } from "../../../Storage/Redux/menuItemSlice";
+import "./banner.css";
 function Banner() {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
@@ -28,6 +28,8 @@ function Banner() {
               width: "100%",
               padding: "20px 20px",
             }}
+            value={value}
+            onChange={handleChange}
             placeholder="Search for Food Items!"
           />
           <span style={{ position: "relative", left: "-43px" }}>
@@ -38,5 +40,4 @@ function Banner() {
     </div>
   );
 }
-
 export default Banner;
